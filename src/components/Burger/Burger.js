@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './Burger.css';
-import BurgerIngredient from '../BurgerIngredient/BurgerIngredient';
+import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
-const Burger = ( props ) => {
+const burger = ( props ) => {
     let transformedIngredients = Object.keys( props.ingredients )
         .map( igKey => {
             return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
@@ -17,7 +17,7 @@ const Burger = ( props ) => {
         transformedIngredients = <p>Please start adding ingredients!</p>;
     }
     return (
-        <div className='burger'>
+        <div className='Burger'>
             <BurgerIngredient type="bread-top" />
             {transformedIngredients}
             <BurgerIngredient type="bread-bottom" />
@@ -25,4 +25,4 @@ const Burger = ( props ) => {
     );
 };
 
-export default Burger;
+export default burger;
